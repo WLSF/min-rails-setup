@@ -1,5 +1,5 @@
 class Match < ApplicationRecord
   
   #Validations
-  validates_presence_of :title
+  validates :title, presence: true
 end

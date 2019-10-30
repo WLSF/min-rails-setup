@@ -1,6 +1,6 @@
 class User < ApplicationRecord
   
   #Validations
-  validates_presence_of :name, :email
-  
+  validates :name, presence: true
+  validates :email, presence: true
 end
