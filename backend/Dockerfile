@@ -1,8 +1,20 @@
-FROM ruby:2.6.1
-RUN apt-get update -qq && apt-get install -y build-essential libpq-dev nodejs
-RUN mkdir -p /app/backend
-WORKDIR /app/backend
-COPY Gemfile /app/backend/Gemfile
-COPY Gemfile.lock /app/backend/Gemfile.lock
+FROM ruby:2.6.1-alpine
+
+RUN apk add --no-cache --update build-base \
+                                linux-headers \
+                                git \
+                                postgresql-dev \
+                                nodejs \
+                                tzdata
+
+ENV PATH /app/backend
+
+RUN mkdir -p $PATH
+
+WORKDIR $PATH
+
+COPY Gemfile $PATH/Gemfile
+COPY Gemfile.lock $PATH/Gemfile.lock
 RUN bundle install
-COPY . /app/backend
+
+COPY . $PATH
