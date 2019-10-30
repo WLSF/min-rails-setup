@@ -1,5 +1,5 @@
-import { asImmutable } from '../../../utils';
 import * as actions from './routerActions';
+import { asImmutable } from '../../../utils';
 
 const initialState = asImmutable({
     current: {

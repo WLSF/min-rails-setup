@@ -1,11 +1,11 @@
-import { createStore, applyMiddleware } from 'redux';
-import { composeWithDevTools } from 'redux-devtools-extension';
-import { combineReducers } from 'redux-immutable';
-import createSagaMiddleware from 'redux-saga';
-import { createLogger } from 'redux-logger';
-import { asImmutable, isDevEnv } from '../utils';
 import * as modules from './modules';
 import * as allSagas from './sagas';
+import { asImmutable, isDevEnv } from '../utils';
+import { composeWithDevTools } from 'redux-devtools-extension';
+import { combineReducers } from 'redux-immutable';
+import { createLogger } from 'redux-logger';
+import { createStore, applyMiddleware } from 'redux';
+import createSagaMiddleware from 'redux-saga';
 
 const getReducers = () => Object.keys(modules).reduce((acc, curr) => {
     const module = modules[curr];

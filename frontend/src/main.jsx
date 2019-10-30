@@ -1,9 +1,9 @@
+import AppContainer from './containers/AppContainer';
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Provider } from 'react-redux';
-import { getHistory } from './utils';
 import { createReduxStore, router } from './redux';
-import AppContainer from './containers/AppContainer';
+import { getHistory } from './utils';
+import { Provider } from 'react-redux';
 
 const store = createReduxStore();
 

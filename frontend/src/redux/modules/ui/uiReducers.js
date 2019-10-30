@@ -1,5 +1,5 @@
-import { asImmutable } from '../../../utils';
 import * as actions from './uiActions';
+import { asImmutable } from '../../../utils';
 
 const initialState = asImmutable({
     sidebarIsOpen: false,
